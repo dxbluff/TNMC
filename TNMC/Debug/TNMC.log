@@ -1,0 +1,4 @@
+﻿  Source.cpp
+c:\users\admin\desktop\tnmc\tnmc\tnmc\genodd.h(15): warning C4554: <<: проверьте порядок применения операторов на наличие ошибки; для четкого задания порядка используйте скобки
+c:\users\admin\desktop\tnmc\tnmc\tnmc\source.cpp(11): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  TNMC.vcxproj -> C:\Users\Admin\Desktop\TNMC\TNMC\Debug\TNMC.exe

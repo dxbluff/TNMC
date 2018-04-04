@@ -118,6 +118,7 @@
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Tests.h" />
     <ClInclude Include="GenOdd.h" />
     <ClInclude Include="NOD.h" />
     <ClInclude Include="Root.h" />

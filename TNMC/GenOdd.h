@@ -2,8 +2,27 @@
 #include <bitset>
 #include <cstdlib>
 #include <time.h>
+#include "Tests.h"
 
-unsigned int Gen(int k)
+unsigned int GenPrime(int k)
+{
+	unsigned int random;
+	do
+	{
+		random = rand();
+		unsigned int tmp = rand();
+		random = random | (tmp << 15);
+		random = random | 1;
+		random = random | (1 << k - 1);
+		random = (random << (32 - k)) >> (32 - k);
+	} 
+	while (!SoloveyShtrass(random, 5));	
+	return random;
+}
+
+
+//GENODD
+unsigned int GenOdd(int k) 
 {
 	unsigned int random;
 	random = rand();
@@ -18,4 +37,3 @@ unsigned int Gen(int k)
 	//std::cout << std::bitset<32>(random) << std::endl;
 	return random;
 }
-

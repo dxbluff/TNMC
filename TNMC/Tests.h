@@ -28,14 +28,14 @@ int Jacobi(unsigned int a, unsigned int n)
 	int k;
 	int s = getI(a);
 	int r = a >> s;
-	std::cout << a <<"=2^" << s << "*" << r << std::endl;
+	//std::cout << a <<"=2^" << s << "*" << r << std::endl;
 
-	if (s % 2 == 0)
+	if((s&1)==0)
 	{
 		k = 1;
 	}
 	else 
-		if ( (n % 8) == 1 || (n % 8) == 7)
+		if ( (n&7) == 1 || (n&7) == 7)
 		{
 			k = 1;
 		}
@@ -43,7 +43,7 @@ int Jacobi(unsigned int a, unsigned int n)
 		{
 			k = -1;
 		}
-	if ((r % 4) == 3 && (n % 4) == 3)
+	if ((r&3) == 3 && (n&3) == 3)
 	{
 		k = -k;
 	}
@@ -61,14 +61,22 @@ bool SoloveyShtrass(unsigned int n, int t)
 	{
 		a = 2 + rand() % (n - 3);
 		r = todegreeRL(a, (n - 1) / 2, n);
-		if ( r != 1 || r != -1)
+
+		if (r != 1 && r != n-1)
 		{
 			return false;
 		}
 
 		s = Jacobi(a,n);
+		//std::cout << "Jacobi("<<a<<","<<n<<")="<< s << std::endl;
+		//std::cout << "MOD=" << s%n << std::endl;
 
-		if (r != s%n )
+		if (s == -1)
+		{
+			s = n - 1;
+		}
+
+		if (r != s)
 		{
 			return false;
 		}

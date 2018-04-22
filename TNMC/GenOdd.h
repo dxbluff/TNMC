@@ -16,7 +16,8 @@ unsigned int GenPrime(int k)
 		random = random | (1 << k - 1);
 		random = (random << (32 - k)) >> (32 - k);
 	} 
-	while (!SoloveyShtrass(random, 5));	
+	//while (!SoloveyShtrass(random, 5));	
+	while (!LuksMethod(random, 5));
 	return random;
 }
 

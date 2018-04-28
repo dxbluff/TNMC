@@ -110,7 +110,14 @@ bool MullerRabbinTest(unsigned int n, int t)
 
 void kanon(int n, std::map<int, int> &kan)   //secondary function
 {
-	int div = 2;
+	int s = getI(n);
+	if (s > 0)
+	{
+		kan[2] = s;
+		n = n >> s;
+	}
+	int div = 3;
+
 	while (n > 1)
 	{
 		while (n % div == 0)
@@ -119,8 +126,16 @@ void kanon(int n, std::map<int, int> &kan)   //secondary function
 			//std::cout << " * " << div;
 			n = n / div;
 		}
-		div++;
+		div+=2;
 	}
+
+	std::cout << "RAZLOZHENIE:\n 1";
+	for (auto it : kan)
+	{
+		for (int i = 0; i < it.second; i++)
+			std::cout << " * "  << it.first;
+	}
+	std::cout << std::endl;
 }
 
 
@@ -129,24 +144,28 @@ bool LuksMethod(unsigned int n, int t)
 	std::map<int, int> razlozhenie;
 	kanon(n - 1, razlozhenie);
 	
-	//for (auto it : razlozhenie)
-	//{
-	//	for (int i = 0; i<it.second; i++)
-	//		std::cout << it.first << " * ";
-	//}
 	int r, a;
-	bool flag = true;
 
 	for (int i = 0; i < t; i++)
 	{
+		bool flag = true;
 		a = 2 + rand() % (n - 3);
+		std::cout << "i=" << i << " a=" << a << std::endl;
 		r = todegreeLR(a, n-1, n);
 		if (r != 1)
+		{
 			return false;
+		}
+
+		int deg;
+
 		for (auto it : razlozhenie)
 		{
-			if (todegreeLR(a, (n - 1) / (it.first), n) == 1)
+			deg = (n - 1) / (it.first);
+			if (todegreeLR(a, deg, n) == 1)
 			{
+				/*std::cout << todegreeLR(a, deg, n) << std::endl;
+				std::cout << a << " 18/" << it.first << " " << deg << std::endl;*/
 				flag = false;
 				break;
 			}

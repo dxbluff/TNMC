@@ -38,3 +38,9 @@ unsigned int GenOdd(int k)
 	//std::cout << std::bitset<32>(random) << std::endl;
 	return random;
 }
+
+
+unsigned int GordonsMethod()
+{
+
+}

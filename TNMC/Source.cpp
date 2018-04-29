@@ -1,5 +1,5 @@
 #include <iostream>
-#include "GenOdd.h"
+#include "Gen.h"
 #include "ToDegree.h"
 
 

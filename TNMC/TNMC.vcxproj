@@ -119,7 +119,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Tests.h" />
-    <ClInclude Include="GenOdd.h" />
+    <ClInclude Include="Gen.h" />
     <ClInclude Include="NOD.h" />
     <ClInclude Include="Root.h" />
     <ClInclude Include="ToDegree.h" />

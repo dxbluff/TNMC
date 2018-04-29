@@ -1,7 +1,0 @@
-﻿  Source.cpp
-f:\tnmc\tnmc\tests.h(13): warning C4244: =: преобразование "unsigned __int64" в "int", возможна потеря данных
-f:\tnmc\tnmc\tests.h(63): warning C4244: =: преобразование "unsigned __int64" в "int", возможна потеря данных
-f:\tnmc\tnmc\genodd.h(16): warning C4554: <<: проверьте порядок применения операторов на наличие ошибки; для четкого задания порядка используйте скобки
-f:\tnmc\tnmc\genodd.h(34): warning C4554: <<: проверьте порядок применения операторов на наличие ошибки; для четкого задания порядка используйте скобки
-f:\tnmc\tnmc\source.cpp(11): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-  TNMC.vcxproj -> F:\TNMC\x64\Debug\TNMC.exe
